@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": [
+      "webworker"
+    ],
+    "types": [
+      "jest",
+      "puppeteer",
+      "expect-puppeteer",
+      "jest-environment-puppeteer"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "webpack"
+  ]
+}

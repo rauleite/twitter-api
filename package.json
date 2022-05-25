@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers project",
+  "engines": {
+    "node": ">=17.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write '**/*.{js,css,json,md}'",
+    "build": "webpack",
+    "publish": "wrangler publish",
+    "dev": "wrangler dev -e staging --local"
+  },
+  "author": "Kristian Freeman <kristian@kristianfreeman.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/expect-puppeteer": "^4.4.7",
+    "@types/jest": "^27.5.1",
+    "@types/jest-environment-puppeteer": "^5.0.2",
+    "@types/node": "^17.0.0",
+    "@types/puppeteer": "^5.4.6",
+    "@types/user-agents": "^1.0.2",
+    "jest": "^28.1.0",
+    "jest-puppeteer": "^6.1.0",
+    "prettier": "^1.18.2",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "@supabase/postgrest-js": "^0.31.1",
+    "cross-fetch": "^3.1.5",
+    "itty-router": "^2.3.10",
+    "puppeteer": "^14.1.1",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-stealth": "^2.9.0",
+    "user-agents": "^1.0.1021"
+  }
+}

@@ -1,0 +1,39 @@
+name = "api"
+compatibility_date = "2022-05-16"
+account_id = "1b5b99f85df2ff3830dfec7cb7cee2d9"
+workers_dev = true
+
+# --- PRODUCTION ---
+# [env.production]
+  main = "dist/bundle.js"
+
+# [env.production.vars]
+[vars]
+  POSTGREST_ENDPOINT = "https://knives-images-body-heading.trycloudflare.com"
+  ENVIRONMENT = "production"
+  
+# [env.production.build]
+[build]
+  command = "npm run build"
+
+# --- STAGING ---
+[env.staging]
+  main = "dist/bundle_dev.js"
+  # Options to configure the development server that your Worker will use.
+  [dev]
+    # local = true
+    # @default `localhost`
+    ip = "192.168.0.103"
+    # @default `8787`
+    port = 4321
+    # @default `http`
+    local_protocol = "http"
+    # Host to forward requests to, defaults to the host of the first route of project
+    # host = 192.168.0.103# see route in Environments
+
+[env.staging.vars]
+  POSTGREST_ENDPOINT = "http://192.168.0.103:3000"
+  ENVIRONMENT = "staging"
+  
+[env.staging.build]
+  command = "ENVIRONMENT=staging pnpm run build"
